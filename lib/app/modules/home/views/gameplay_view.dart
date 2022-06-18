@@ -40,7 +40,9 @@ class GamePlayView extends GetView<HomeController> {
             Text(""+controller.score.value.toString()),
             Spacer(),
             controller.score.value == "You Loss" || controller.score.value == "You Win!!!"?
-                ElevatedButton(onPressed: (){controller.isInstruction.value=true;}, child: Text("Play Again"))
+                ElevatedButton(onPressed: (){
+                  controller.isInstruction.value=true;
+                  controller.resetAll();}, child: Text("Play Again"))
                 :Container(),
             Spacer(),
 

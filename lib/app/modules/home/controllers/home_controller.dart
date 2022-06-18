@@ -33,35 +33,35 @@ class HomeController extends GetxController {
     selectedImage1.value = Random().nextInt(6)+1;
     selectedImage2.value = Random().nextInt(6)+1;
 
-    int total = selectedImage1.value + selectedImage2.value +1;
+    int total = selectedImage1.value + selectedImage2.value;
 
     if(initially.value==0){
 
       if(total == 7  || total == 11){
         sum.value = "Dice sum: "+total.toString();
         score.value = "You Win!!!";
-        resetAll();
+
       }
       else if (total == 2 || total == 3 || total == 12){
         sum.value = "Dice sum: "+total.toString();
         score.value = "You Loss";
-        resetAll();
+
       }else{
         sum.value = "Dice sum: "+total.toString();
         point.value = total;
         score.value = "Keep rolling until you match your point";
-        
+
       }
       initially.value=1;
     }else{
       if(total==7){
         sum.value = "Dice sum: "+total.toString();
         score.value = "You Loss";
-        resetAll();
+
       }else if(total==point.value){
         sum.value = "Dice sum: "+total.toString();
         score.value = "You Win!!!";
-        resetAll();
+
       }else{
         sum.value = "Dice sum: "+total.toString();
         score.value = "Keep rolling until you match your point";
